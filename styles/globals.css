@@ -1,8 +1,9 @@
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   color: var(--black);
-  background: #F5F6F8;
+  background: #f5f6f8;
 }
 
 a {
@@ -16,12 +17,12 @@ a {
 }
 
 :root {
-  --black: #3B434E;
+  --black: #3b434e;
   --white: white;
-  --gray-light: #EBEBEB;
-  --primary: #7653FC;
+  --gray-light: #ebebeb;
+  --primary: #7653fc;
   --primary-hover: #6344df;
-  --red: #DE0000;
-  --green: #1DC37E;
-  --green-light: #C8F8E4;
+  --red: #de0000;
+  --green: #1dc37e;
+  --green-light: #c8f8e4;
 }

@@ -10,8 +10,12 @@ export default function Home() {
   return (
     <div className={notoSans.className}>
       <Htag tag="h3">Текст</Htag>
-      <Button appearance="primary">Кнопка</Button>
-      <Button appearance="ghost">Кнопка</Button>
+      <Button appearance="primary" arrow="down">
+        Кнопка
+      </Button>
+      <Button appearance="ghost" arrow="down">
+        Кнопка
+      </Button>
     </div>
   );
 }
