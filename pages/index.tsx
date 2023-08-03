@@ -1,5 +1,6 @@
 import { Noto_Sans_KR } from "next/font/google";
-import { Button, Htag, P, Tag } from "@/components";
+import { Button, Htag, P, Rating, Tag } from "@/components";
+import { useState } from "react";
 
 const notoSans = Noto_Sans_KR({
   subsets: ["latin"],
@@ -7,6 +8,7 @@ const notoSans = Noto_Sans_KR({
 });
 
 export default function Home() {
+  const [rating, setRating] = useState(4);
   return (
     <div className={notoSans.className}>
       <Htag tag="h3">Текст</Htag>
@@ -30,6 +32,7 @@ export default function Home() {
       <Tag size="m" color="primary">
         Primary
       </Tag>
+      <Rating rating={rating} setRating={setRating} isEditable />
     </div>
   );
 }
