@@ -26,7 +26,6 @@
   fill: var(--white);
 }
 
-
 .ghost {
   color: var(--black);
   background: none;
@@ -47,4 +46,3 @@
   transform: rotate(90deg);
   transition: all 0.2s;
 }
-
