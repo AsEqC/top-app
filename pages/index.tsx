@@ -1,5 +1,5 @@
 import { Noto_Sans_KR } from "next/font/google";
-import { Button, Htag, P } from "@/components";
+import { Button, Htag, P, Tag } from "@/components";
 
 const notoSans = Noto_Sans_KR({
   subsets: ["latin"],
@@ -16,7 +16,20 @@ export default function Home() {
       <Button appearance="ghost" arrow="down">
         Кнопка
       </Button>
-      <P size="b">eoprepohnpitehn</P>
+      <P size="l">eoprepohnpitehn</P>
+
+      <Tag size="s" color="red">
+        Red
+      </Tag>
+      <Tag size="m" color="ghost">
+        Ghost
+      </Tag>
+      <Tag size="m" color="green">
+        Green
+      </Tag>
+      <Tag size="m" color="primary">
+        Primary
+      </Tag>
     </div>
   );
 }
