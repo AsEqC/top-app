@@ -1,6 +1,4 @@
-import { StarIconProps } from "@/components/Rating/icons/StarIcon.props";
-
-export const StarIcon = ({ className }: StarIconProps) => {
+export const StarIcon = ({ className }: { className?: string }) => {
   return (
     <svg
       className={className}

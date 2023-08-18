@@ -1,38 +1,33 @@
-import { Noto_Sans_KR } from "next/font/google";
-import { Button, Htag, P, Rating, Tag } from "@/components";
 import { useState } from "react";
+import { withLayout } from "@/layout/Layout";
+import { GetStaticProps } from "next";
+import axios from "axios";
+import { MenuItem } from "@/interfaces/menu.interface";
 
-const notoSans = Noto_Sans_KR({
-  subsets: ["latin"],
-  weight: ["300", "400", "700", "500"],
-});
-
-export default function Home() {
+function Home({ menu, firstCategory }: HomeProps) {
   const [rating, setRating] = useState(4);
-  return (
-    <div className={notoSans.className}>
-      <Htag tag="h3">Текст</Htag>
-      <Button appearance="primary" arrow="down">
-        Кнопка
-      </Button>
-      <Button appearance="ghost" arrow="down">
-        Кнопка
-      </Button>
-      <P size="l">eoprepohnpitehn</P>
+  return <></>;
+}
 
-      <Tag size="s" color="red">
-        Red
-      </Tag>
-      <Tag size="m" color="ghost">
-        Ghost
-      </Tag>
-      <Tag size="m" color="green">
-        Green
-      </Tag>
-      <Tag size="m" color="primary">
-        Primary
-      </Tag>
-      <Rating rating={rating} setRating={setRating} isEditable />
-    </div>
+export default withLayout(Home);
+
+export const getStaticProps: GetStaticProps = async () => {
+  const firstCategory = 0;
+  const { data: menu } = await axios.post<MenuItem[]>(
+    process.env.NEXT_PUBLIC_DOMAIN + "/api/top-page/find",
+    {
+      firstCategory,
+    },
   );
+  return {
+    props: {
+      menu,
+      firstCategory,
+    },
+  };
+};
+
+interface HomeProps extends Record<string, unknown> {
+  menu: MenuItem[];
+  firstCategory: number;
 }
