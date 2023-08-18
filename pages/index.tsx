@@ -4,12 +4,14 @@ import { GetStaticProps } from "next";
 import axios from "axios";
 import { MenuItem } from "@/interfaces/menu.interface";
 import { Input } from "@/components/Input/Input";
+import { Textarea } from "@/components/Textarea/Textarea";
 
 function Home({ menu, firstCategory }: HomeProps) {
   const [rating, setRating] = useState(4);
   return (
     <>
       <Input />
+      <Textarea />
     </>
   );
 }

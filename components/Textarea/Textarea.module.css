@@ -1,5 +1,5 @@
-.input {
-  padding: 7px 15px;
+.textarea {
+  padding: 7px;
 
   border: none;
   color: var(--gray);
