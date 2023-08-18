@@ -4,7 +4,7 @@ import { Menu } from "../Menu/Menu";
 export const Sidebar = ({ ...props }: SidebarProps) => {
   return (
     <div {...props}>
-      <Menu></Menu>
+      <Menu />
     </div>
   );
 };
