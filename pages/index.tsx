@@ -3,10 +3,15 @@ import { withLayout } from "@/layout/Layout";
 import { GetStaticProps } from "next";
 import axios from "axios";
 import { MenuItem } from "@/interfaces/menu.interface";
+import { Input } from "@/components/Input/Input";
 
 function Home({ menu, firstCategory }: HomeProps) {
   const [rating, setRating] = useState(4);
-  return <></>;
+  return (
+    <>
+      <Input />
+    </>
+  );
 }
 
 export default withLayout(Home);

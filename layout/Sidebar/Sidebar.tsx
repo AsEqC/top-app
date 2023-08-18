@@ -6,7 +6,7 @@ import { Logo } from "@/layout/icons/logo-icon";
 import cn from "classnames";
 export const Sidebar = ({ className, ...props }: SidebarProps) => {
   return (
-    <div className={cn(className, styles.sidebar)}>
+    <div className={cn(className, styles.sidebar)} {...props}>
       <Logo className={styles.logo} />
       <div>Поиск</div>
       <Menu />
