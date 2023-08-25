@@ -6,3 +6,4 @@ export * from "./Rating/Rating";
 export * from "./Input/Input";
 export * from "./Textarea/Textarea";
 export * from "./Card/Card";
+export * from "./Advantages/Advantages";
