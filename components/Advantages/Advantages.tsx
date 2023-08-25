@@ -1,6 +1,6 @@
 import { AdvantagesProps } from "./Advantages.props";
 import styles from "./Advantages.module.css";
-import { CheckIcon } from "@/components/Advantages/icons/check-icon";
+import { CheckIcon } from "@/public/icons/check-icon";
 
 export const Advantages = ({ advantages }: AdvantagesProps) => {
   return (

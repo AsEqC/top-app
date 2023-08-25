@@ -1,7 +1,7 @@
 import { HhDataProps } from "./HhData.props";
 import styles from "./HhData.module.css";
 import { Card } from "@/components";
-import { RateIcon } from "@/components/HhData/icons/rate-icon";
+import { RateIcon } from "@/public/icons/rate-icon";
 import { priceRu } from "@/helpers/helpers";
 
 export const HhData = ({

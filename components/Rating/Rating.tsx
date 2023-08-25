@@ -2,7 +2,7 @@ import { RatingProps } from "./Rating.props";
 import styles from "./Rating.module.css";
 import cn from "classnames";
 import { ReactElement, useEffect, useState } from "react";
-import { StarIcon } from "@/components/Rating/icons/StarIcon";
+import { StarIcon } from "@/public/icons/star-icon";
 
 export const Rating = ({
   className,

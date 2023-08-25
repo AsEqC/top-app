@@ -1,9 +1,9 @@
-import { ProductIcon } from "@/helpers/icons/product-icon";
+import { ProductIcon } from "@/public/icons/product-icon";
 import { FirstLevelMenuItem } from "@/interfaces/menu.interface";
-import { CoursesIcon } from "@/helpers/icons/courses-icon";
+import { CoursesIcon } from "@/public/icons/courses-icon";
 import { TopLevelCategory } from "@/interfaces/page.interface";
-import { ServicesIcon } from "@/helpers/icons/services-icon";
-import { BookIcon } from "@/helpers/icons/book-icon";
+import { ServicesIcon } from "@/public/icons/services-icon";
+import { BookIcon } from "@/public/icons/book-icon";
 
 export const firstLevelMenu: FirstLevelMenuItem[] = [
   {
