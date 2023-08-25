@@ -4,20 +4,14 @@ import { Header } from "./Header/Header";
 import { Footer } from "./Footer/Footer";
 import { FC } from "react";
 import styles from "./Layout.module.css";
-import {
-  AppContext,
-  AppContextProvider,
-  IAppContext,
-} from "@/context/app.context";
+import { AppContextProvider, IAppContext } from "@/context/app.context";
 
 const Layout = ({ children }: LayoutProps) => {
   return (
     <div className={styles.wrapper}>
       <Header className={styles.header} />
-      <div>
-        <Sidebar className={styles.sidebar} />
-        <div className={styles.body}>{children}</div>
-      </div>
+      <Sidebar className={styles.sidebar} />
+      <div className={styles.body}>{children}</div>
       <Footer className={styles.footer} />
     </div>
   );
