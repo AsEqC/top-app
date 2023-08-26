@@ -9,3 +9,5 @@ export * from "./Card/Card";
 export * from "./Advantages/Advantages";
 export * from "./Sort/Sort";
 export * from "./Search/Search";
+export * from "./Product/Product";
+export * from "./Divider/Divider";
