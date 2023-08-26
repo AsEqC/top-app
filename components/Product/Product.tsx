@@ -2,14 +2,18 @@ import { ProductProps } from "./Product.props";
 import styles from "./Product.module.css";
 import { Button, Card, Divider, Rating, Tag } from "@/components";
 import { declOfNum, priceRu } from "@/helpers/helpers";
+import Image from "next/image";
+import cn from "classnames";
 
-export const Product = ({ product }: ProductProps) => {
+export const Product = ({ product  }: ProductProps) => {
   return (
     <Card className={styles.product}>
       <div className={styles.logo}>
-        <img
+        <Image
           src={process.env.NEXT_PUBLIC_DOMAIN + product.image}
           alt={product.title}
+          width={70}
+          height={70}
         />
       </div>
       <div className={styles.title}>{product.title}</div>
@@ -65,7 +69,7 @@ export const Product = ({ product }: ProductProps) => {
           </div>
         )}
       </div>
-      <Divider className={styles.hr} />
+      <Divider className={cn(styles.hr, styles.hr2)} />
       <div className={styles.actions}>
         <Button appearance="primary">Узнать подробнее</Button>
         <Button
