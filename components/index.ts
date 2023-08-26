@@ -8,3 +8,4 @@ export * from "./Textarea/Textarea";
 export * from "./Card/Card";
 export * from "./Advantages/Advantages";
 export * from "./Sort/Sort";
+export * from "./Search/Search";

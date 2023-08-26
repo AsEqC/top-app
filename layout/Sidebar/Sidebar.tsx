@@ -4,11 +4,12 @@ import { Menu } from "../Menu/Menu";
 import React from "react";
 import { Logo } from "@/public/icons/logo-icon";
 import cn from "classnames";
+import { Search } from "@/components";
 export const Sidebar = ({ className, ...props }: SidebarProps) => {
   return (
     <div className={cn(className, styles.sidebar)} {...props}>
       <Logo className={styles.logo} />
-      <div>Поиск</div>
+      <Search />
       <Menu />
     </div>
   );
