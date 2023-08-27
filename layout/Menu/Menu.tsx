@@ -80,7 +80,7 @@ export const Menu = () => {
     return pages.map((p) => (
       <Link
         href={`/${route}/${p.alias}`}
-        key={p.alias}
+        key={p._id}
         className={cn(styles.thirdLevel, {
           [styles.thirdLevelActive]: `/${route}/${p.alias}` == router.asPath,
         })}

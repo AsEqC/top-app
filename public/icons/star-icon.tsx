@@ -1,4 +1,13 @@
-export const StarIcon = ({ className }: { className?: string }) => {
+import { DetailedHTMLProps, HTMLAttributes } from "react";
+
+interface StarIconProps
+  extends DetailedHTMLProps<
+    HTMLAttributes<HTMLOrSVGElement>,
+    HTMLOrSVGElement
+  > {
+  className?: string;
+}
+export const StarIcon = ({ className }: StarIconProps) => {
   return (
     <svg
       className={className}

@@ -140,7 +140,7 @@
 }
 
 .opened {
-  max-height: min-content;
+  max-height: max-content;
   padding: 30px;
 }
 
