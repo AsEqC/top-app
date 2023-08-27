@@ -6,11 +6,20 @@ import { ForwardedRef, forwardRef } from "react";
 // eslint-disable-next-line react/display-name
 export const Input = forwardRef(
   (
-    { className, ...props }: InputProps,
+    { className, error, ...props }: InputProps,
     ref: ForwardedRef<HTMLInputElement>,
   ) => {
     return (
-      <input className={cn(className, styles.input)} {...props} ref={ref} />
+      <div className={cn(className, styles.inputWrapper)}>
+        <input
+          className={cn(styles.input, {
+            [styles.error]: error,
+          })}
+          ref={ref}
+          {...props}
+        />
+        {error && <span className={styles.errorMessage}>{error.message}</span>}
+      </div>
     );
   },
 );

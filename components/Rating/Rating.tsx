@@ -14,7 +14,7 @@ import { KeyboardEvent } from "react";
 // eslint-disable-next-line react/display-name
 export const Rating = forwardRef(
   (
-    { isEditable = false, rating, setRating, ...props }: RatingProps,
+    { isEditable = false, rating, setRating, error, ...props }: RatingProps,
     ref: ForwardedRef<HTMLDivElement>,
   ) => {
     const [ratingArray, setRatingArray] = useState<ReactElement[]>(
@@ -34,8 +34,8 @@ export const Rating = forwardRef(
               [styles.filled]: i < currentRating,
               [styles.editable]: isEditable,
             })}
-            onMouseEnter={() => changeDispay(i + 1)}
-            onMouseLeave={() => changeDispay(rating)}
+            onMouseEnter={() => changeDisplay(i + 1)}
+            onMouseLeave={() => changeDisplay(rating)}
             onClick={() => onClick(i + 1)}
           >
             <StarIcon
@@ -50,7 +50,7 @@ export const Rating = forwardRef(
       setRatingArray(updatedArray);
     };
 
-    const changeDispay = (i: number) => {
+    const changeDisplay = (i: number) => {
       if (!isEditable) {
         return;
       }
@@ -72,10 +72,17 @@ export const Rating = forwardRef(
     };
 
     return (
-      <div {...props} ref={ref}>
+      <div
+        {...props}
+        ref={ref}
+        className={cn(styles.ratingWrapper, {
+          [styles.error]: error,
+        })}
+      >
         {ratingArray.map((r, i) => (
           <span key={i}>{r}</span>
         ))}
+        {error && <span className={styles.errorMessage}>{error.message}</span>}
       </div>
     );
   },
