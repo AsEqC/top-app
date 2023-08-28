@@ -20,6 +20,7 @@ export const TopPageComponent = ({
       sort: SortEnum.Rating,
     },
   );
+
   useEffect(() => {
     dispatchSort({ type: "reset", initialState: products });
   }, [products]);
