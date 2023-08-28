@@ -5,7 +5,7 @@ import { HhData } from "@/components/HhData/HhData";
 import { TopLevelCategory } from "@/interfaces/page.interface";
 import { HhDataProps } from "@/components/HhData/HhData.props";
 import { SortEnum } from "@/components/Sort/Sort.props";
-import { useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import { sortReducer } from "@/page-components/TopPageComponent/sort.reducer";
 
 export const TopPageComponent = ({
@@ -20,6 +20,10 @@ export const TopPageComponent = ({
       sort: SortEnum.Rating,
     },
   );
+  useEffect(() => {
+    dispatchSort({ type: "reset", initialState: products });
+  }, [products]);
+
   const setSort = (sort: SortEnum) => {
     dispatchSort({ type: sort });
   };
@@ -27,7 +31,7 @@ export const TopPageComponent = ({
     <div className={styles.wrapper}>
       <div className={styles.title}>
         <Htag tag="h1">{page.title}</Htag>
-        <Tag color="gray" size="m">
+        <Tag color="grey" size="m">
           {products && products.length}
         </Tag>
         <Sort sort={sort} setSort={setSort} />

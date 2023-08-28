@@ -1,4 +1,10 @@
-export const CloseIcon = ({ className }: { className: string }) => {
+export const CloseIcon = ({
+  className,
+  callback,
+}: {
+  className?: string;
+  callback: () => void;
+}) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -7,6 +13,7 @@ export const CloseIcon = ({ className }: { className: string }) => {
       viewBox="0 0 12 12"
       fill="none"
       className={className}
+      onClick={callback}
     >
       <line
         x1="2.06066"

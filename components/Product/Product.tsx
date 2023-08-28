@@ -12,12 +12,23 @@ import {
 import { declOfNum, priceRu } from "@/helpers/helpers";
 import Image from "next/image";
 import cn from "classnames";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import Link from "next/link";
 
-export const Product = ({ product }: ProductProps) => {
+export const Product = ({ product, className, ...props }: ProductProps) => {
   const [isReviewOpened, setIsReviewOpened] = useState(false);
+  const reviewRef = useRef<HTMLDivElement>(null);
+
+  const scrollToReview = () => {
+    setIsReviewOpened(true);
+    reviewRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  };
+
   return (
-    <>
+    <div className={className} {...props}>
       <Card className={styles.product}>
         <div className={styles.logo}>
           <Image
@@ -52,8 +63,10 @@ export const Product = ({ product }: ProductProps) => {
         <div className={styles.priceTitle}>цена</div>
         <div className={styles.creditTitle}>кредит</div>
         <div className={styles.rateTitle}>
-          {product.reviewCount}{" "}
-          {declOfNum(product.reviewCount, ["отзыв", "отзыва", "отзывов"])}
+          <Link href="#" onClick={scrollToReview} className={styles.link}>
+            {product.reviewCount}{" "}
+            {declOfNum(product.reviewCount, ["отзыв", "отзыва", "отзывов"])}
+          </Link>
         </div>
         <Divider className={styles.hr} />
         <div className={styles.description}>{product.description}</div>
@@ -95,6 +108,7 @@ export const Product = ({ product }: ProductProps) => {
       </Card>
       <Card
         color="blue"
+        ref={reviewRef}
         className={cn(styles.reviews, {
           [styles.opened]: isReviewOpened,
           [styles.closed]: !isReviewOpened,
@@ -102,12 +116,12 @@ export const Product = ({ product }: ProductProps) => {
       >
         {product.reviews.map((r) => (
           <div key={r._id}>
-            <Divider />
             <Review review={r} />
+            <Divider />
           </div>
         ))}
         <ReviewForm productId={product._id} />
       </Card>
-    </>
+    </div>
   );
 };

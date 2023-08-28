@@ -144,6 +144,9 @@
   padding: 30px;
 }
 
+.link {
+  color: var(--primary);
+}
 @media screen and (max-width: 1320px) {
   .product {
     grid-template-columns:

@@ -1,23 +1,16 @@
-import { RatingProps } from "./Rating.props";
+import {RatingProps} from "./Rating.props";
 import styles from "./Rating.module.css";
 import cn from "classnames";
-import {
-  ForwardedRef,
-  forwardRef,
-  ReactElement,
-  useEffect,
-  useState,
-} from "react";
-import { StarIcon } from "@/public/icons/star-icon";
-import { KeyboardEvent } from "react";
+import {ForwardedRef, forwardRef, ReactElement, useEffect, useState,} from "react";
+import {StarIcon} from "@/public/icons/star-icon";
 
 // eslint-disable-next-line react/display-name
 export const Rating = forwardRef(
   (
-    { isEditable = false, rating, setRating, error, ...props }: RatingProps,
+    { isEditable = false, error, rating, setRating, ...props }: RatingProps,
     ref: ForwardedRef<HTMLDivElement>,
   ) => {
-    const [ratingArray, setRatingArray] = useState<ReactElement[]>(
+    const [ratingArray, setRatingArray] = useState<JSX.Element[]>(
       new Array(5).fill(<></>),
     );
 
@@ -38,12 +31,7 @@ export const Rating = forwardRef(
             onMouseLeave={() => changeDisplay(rating)}
             onClick={() => onClick(i + 1)}
           >
-            <StarIcon
-              tabIndex={isEditable ? 0 : -1}
-              onKeyDown={(e: KeyboardEvent<SVGElement>) =>
-                isEditable && handleSpace(i + 1, e)
-              }
-            />
+            <StarIcon tabIndex={isEditable ? 0 : -1} />
           </span>
         );
       });
@@ -59,13 +47,6 @@ export const Rating = forwardRef(
 
     const onClick = (i: number) => {
       if (!isEditable || !setRating) {
-        return;
-      }
-      setRating(i);
-    };
-
-    const handleSpace = (i: number, e: KeyboardEvent<SVGElement>) => {
-      if (e.code != "Space" || !setRating) {
         return;
       }
       setRating(i);
