@@ -1,7 +1,7 @@
 import { ReviewProps } from "./Review.props";
 import styles from "./Review.module.css";
 import cn from "classnames";
-import { UserIcon } from "@/public/icons/user-icon";
+import { UserIcon } from "@/icon-components/UserIcon";
 import { format } from "date-fns";
 import { ru } from "date-fns/locale";
 import { Rating } from "@/components";

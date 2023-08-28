@@ -1,7 +1,7 @@
 import { ButtonProps } from "./Button.props";
 import styles from "./Button.module.css";
 import cn from "classnames";
-import { ArrowIcon } from "@/public/icons/arrow-icon";
+import { ArrowIcon } from "@/icon-components/ArrowIcon";
 
 export const Button = ({
   appearance,

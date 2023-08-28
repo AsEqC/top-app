@@ -1,8 +1,14 @@
-import {RatingProps} from "./Rating.props";
+import { RatingProps } from "./Rating.props";
 import styles from "./Rating.module.css";
 import cn from "classnames";
-import {ForwardedRef, forwardRef, ReactElement, useEffect, useState,} from "react";
-import {StarIcon} from "@/public/icons/star-icon";
+import {
+  ForwardedRef,
+  forwardRef,
+  ReactElement,
+  useEffect,
+  useState,
+} from "react";
+import { StarIcon } from "@/icon-components/StarIcon";
 
 // eslint-disable-next-line react/display-name
 export const Rating = forwardRef(

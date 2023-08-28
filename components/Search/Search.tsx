@@ -3,7 +3,7 @@ import styles from "./Search.module.css";
 import cn from "classnames";
 import { Button, Input } from "@/components";
 import { useState } from "react";
-import { GlassIcon } from "@/public/icons/glass-icon";
+import { GlassIcon } from "@/icon-components/GlassIcon";
 import { useRouter } from "next/router";
 import { KeyboardEvent } from "react";
 

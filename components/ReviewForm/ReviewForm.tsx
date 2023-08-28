@@ -2,7 +2,7 @@ import { ReviewFormProps } from "./ReviewForm.props";
 import styles from "./ReviewForm.module.css";
 import cn from "classnames";
 import { Button, Input, Rating, Textarea } from "@/components";
-import { CloseIcon } from "@/public/icons/close-icon";
+import { SmallCloseIcon } from "@/icon-components/SmallCloseIcon";
 import { Controller, useForm } from "react-hook-form";
 import {
   IReviewForm,
@@ -100,7 +100,7 @@ export const ReviewForm = ({
         <div className={cn(styles.success, styles.panel)}>
           <div className={styles.successTitle}>Ваш отзыв отправлен</div>
           <div>Спасибо, ваш отзыв будет опубликован после проверки.</div>
-          <CloseIcon
+          <SmallCloseIcon
             className={styles.close}
             callback={() => setIsSuccess(false)}
           />
@@ -109,7 +109,7 @@ export const ReviewForm = ({
       {error && (
         <div className={cn(styles.error, styles.panel)}>
           Что-то пошло не так, попробуйте обновить страницу
-          <CloseIcon
+          <SmallCloseIcon
             className={styles.close}
             callback={() => setError(undefined)}
           />

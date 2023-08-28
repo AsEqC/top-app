@@ -1,4 +1,4 @@
-export const CloseIcon = ({
+export const SmallCloseIcon = ({
   className,
   callback,
 }: {

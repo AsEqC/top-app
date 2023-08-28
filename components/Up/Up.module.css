@@ -1,15 +1,16 @@
 .up {
+  width: 40px;
+  height: 40px;
+  background: var(--primary);
+  box-shadow: 0 4px 4px rgba(0,0,0,0.05);
+  border-radius: 10px;
   bottom: 30px;
   right: 30px;
-  background: none;
   position: fixed;
   cursor: pointer;
   border: none;
 }
 
-.up svg g rect{
-  fill: var(--primary);
-}
-.up:hover svg g rect{
-  fill: var(--primary-hover);
+.up:hover {
+  background-color: var(--primary-hover);
 }
