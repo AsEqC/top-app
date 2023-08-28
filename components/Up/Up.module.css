@@ -1,0 +1,15 @@
+.up {
+  bottom: 30px;
+  right: 30px;
+  background: none;
+  position: fixed;
+  cursor: pointer;
+  border: none;
+}
+
+.up svg g rect{
+  fill: var(--primary);
+}
+.up:hover svg g rect{
+  fill: var(--primary-hover);
+}
