@@ -30,6 +30,7 @@ export const Menu = () => {
     },
     hidden: { opacity: 0, height: 0 },
   };
+
   const openSecondLevel = (secondCategory: string) => {
     setMenu &&
       setMenu(
