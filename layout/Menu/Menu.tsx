@@ -6,17 +6,19 @@ import cn from "classnames";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { firstLevelMenu } from "@/helpers/helpers";
-import { motion } from "framer-motion";
+import {motion, useReducedMotion} from "framer-motion";
 
 export const Menu = () => {
   const [announce, setAnnounce] = useState<AnnounceType>();
   const { menu, setMenu, firstCategory } = useContext(AppContext);
   const router = useRouter();
+  const shouldReduceMotion = useReducedMotion()
+  
 
   const variants = {
     visible: {
       marginBottom: 20,
-      transition: {
+      transition: shouldReduceMotion ? {} : {
         when: "beforeChildren",
         staggerChildren: 0.1,
       },
@@ -29,7 +31,7 @@ export const Menu = () => {
       opacity: 1,
       height: "auto",
     },
-    hidden: { opacity: 0, height: 0 },
+    hidden: { opacity: shouldReduceMotion ? 1 : 0, height: 0 },
   };
 
   const openSecondLevel = (secondCategory: string) => {
