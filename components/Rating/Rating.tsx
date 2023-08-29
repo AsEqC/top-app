@@ -38,10 +38,10 @@ export const Rating = forwardRef(
       if (!isEditable) {
         return -1;
       }
-      if (!rating && i == 0) {
+      if (!rating && i === 0) {
         return tabIndex ?? 0;
       }
-      if (r == i + 1) {
+      if (r === i + 1) {
         return tabIndex ?? 0;
       }
       return -1;
@@ -62,6 +62,12 @@ export const Rating = forwardRef(
             tabIndex={computeFocus(rating, i)}
             onKeyDown={handleKey}
             ref={(r) => ratingArrayRef.current?.push(r)}
+            role={isEditable ? "slider" : ""}
+            aria-invalid={!!error}
+            aria-valuenow={rating}
+            aria-valuemin={1}
+            aria-valuemax={5}
+            aria-label={isEditable ? "Укажите рейтинг" : "Рейтинг " + rating}
           >
             <StarIcon />
           </span>
@@ -88,7 +94,7 @@ export const Rating = forwardRef(
       if (!isEditable || !setRating) {
         return;
       }
-      if (e.code == "ArrowRight" || e.code == "ArrowUp") {
+      if (e.code === "ArrowRight" || e.code === "ArrowUp") {
         if (!rating) {
           setRating(1);
         } else {
@@ -97,7 +103,7 @@ export const Rating = forwardRef(
         }
         ratingArrayRef.current[rating]?.focus();
       }
-      if (e.code == "ArrowLeft" || e.code == "ArrowDown") {
+      if (e.code === "ArrowLeft" || e.code === "ArrowDown") {
         e.preventDefault();
         setRating(rating > 1 ? rating - 1 : 1);
         ratingArrayRef.current[rating - 2]?.focus();
@@ -115,7 +121,11 @@ export const Rating = forwardRef(
         {ratingArray.map((r, i) => (
           <span key={i}>{r}</span>
         ))}
-        {error && <span className={styles.errorMessage}>{error.message}</span>}
+        {error && (
+          <span role="alert" className={styles.errorMessage}>
+            {error.message}
+          </span>
+        )}
       </div>
     );
   },

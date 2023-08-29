@@ -1,10 +1,4 @@
-export const SmallCloseIcon = ({
-  className,
-  callback,
-}: {
-  className?: string;
-  callback: () => void;
-}) => {
+export const SmallCloseIcon = () => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -12,8 +6,6 @@ export const SmallCloseIcon = ({
       height="12"
       viewBox="0 0 12 12"
       fill="none"
-      className={className}
-      onClick={callback}
     >
       <line
         x1="2.06066"

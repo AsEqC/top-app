@@ -56,7 +56,7 @@ export const getStaticProps: GetStaticProps<TopPageProps> = async ({
     const { data: menu } = await axios.post<MenuItem[]>(API.topPage.find, {
       firstCategory: firstCategoryItem.id,
     });
-    if (menu.length == 0) {
+    if (menu.length === 0) {
       return {
         notFound: true,
       };

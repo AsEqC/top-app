@@ -13,13 +13,13 @@ export const Tag = ({
   return (
     <div
       className={cn(styles.tag, className, {
-        [styles.s]: size == "s",
-        [styles.m]: size == "m",
-        [styles.ghost]: color == "ghost",
-        [styles.red]: color == "red",
-        [styles.grey]: color == "grey",
-        [styles.green]: color == "green",
-        [styles.primary]: color == "primary",
+        [styles.s]: size === "s",
+        [styles.m]: size === "m",
+        [styles.ghost]: color === "ghost",
+        [styles.red]: color === "red",
+        [styles.grey]: color === "grey",
+        [styles.green]: color === "green",
+        [styles.primary]: color === "primary",
       })}
       {...props}
     >
