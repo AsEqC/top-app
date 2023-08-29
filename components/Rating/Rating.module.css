@@ -2,16 +2,16 @@
   fill: var(--primary);
 }
 
+.star  {
+  display: inline-block;
+}
+
 .star svg {
   margin-right: 5px;
 }
 
 .editable {
   cursor: pointer;
-}
-
-.error svg{
-  stroke: var(--red);
 }
 
 .ratingWrapper {
@@ -23,4 +23,8 @@
   bottom: -20px;
   left: 0;
   color: var(--red);
+}
+
+.error svg {
+  stroke: var(--red);
 }
